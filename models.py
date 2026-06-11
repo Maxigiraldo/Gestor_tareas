@@ -4,4 +4,3 @@ class Tarea:
         self.descripcion = descripcion
         self.prioridad = prioridad
         self.estado = estado
-        
