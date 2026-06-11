@@ -2,22 +2,32 @@ from models import Tarea
 
 class GestorTareas:
     def agregar(self, id, descripcion: str, prioridad: str, estado: str):
-        tarea = Tarea(id, descripcion, prioridad, estado)
+        tarea_nueva = Tarea(id, descripcion, prioridad, estado)
+        tarea = {
+            'ID': tarea_nueva.id,
+            'Descripcion': tarea_nueva.descripcion,
+            'Prioridad': tarea_nueva.prioridad,
+            'Estado': tarea_nueva.estado
+        }
         return tarea
     
     def completar(self, id: int, data: list):
-        for i in data:
-            if data['ID'] == id:
-                data['Estado'] = 'Completado'
+        for tarea in data:
+            if tarea['ID'] == id:
+                tarea['Estado'] = 'Completado'
                 break
         return data
     
     def eliminar(self, id: int, data: list):
-        for i in data:
-            if data['ID'] == id:
-                data.remove(i)
+        for tarea in data:
+            if tarea['ID'] == id:
+                data.remove(tarea)
     
     def listar(self, data: list, filtro):
+        if data == []:
+            print("No hay tareas")
+            return
+        
         print("ID\tPRIORIDAD\tESTADO\tTAREA")
         for tarea in data:
             if filtro is None or tarea[filtro[0]] == filtro[1]:
