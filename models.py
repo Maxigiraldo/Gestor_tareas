@@ -1,6 +1,7 @@
 class Tarea:
-    def __init__(self, id: int, prioridad: str, estado:str, tarea:str):
+    def __init__(self, id: int, descripcion:str, prioridad: str, estado:str):
         self.id = id
+        self.descripcion = descripcion
         self.prioridad = prioridad
         self.estado = estado
-        self.tarea = tarea
+        
