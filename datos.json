@@ -1,1 +1,32 @@
-[]
+[
+    {
+        "ID": 1,
+        "Descripcion": "Subir commit",
+        "Prioridad": "Normal",
+        "Estado": "Pendiente"
+    },
+    {
+        "ID": 2,
+        "Descripcion": "Prueba1",
+        "Prioridad": "Normal",
+        "Estado": "Completado"
+    },
+    {
+        "ID": 3,
+        "Descripcion": "Prueba2",
+        "Prioridad": "Normal",
+        "Estado": "Completado"
+    },
+    {
+        "ID": 4,
+        "Descripcion": "Prueba3",
+        "Prioridad": "Normal",
+        "Estado": "Pendiente"
+    },
+    {
+        "ID": 5,
+        "Descripcion": "Prueba3",
+        "Prioridad": "Media",
+        "Estado": "Completado"
+    }
+]

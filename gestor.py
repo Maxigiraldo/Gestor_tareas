@@ -9,12 +9,14 @@ class GestorTareas:
             'Prioridad': tarea_nueva.prioridad,
             'Estado': tarea_nueva.estado
         }
+        print(f"Tarea agregada con exito (id: {tarea_nueva.id})")
         return tarea
     
     def completar(self, id: int, data: list):
         for tarea in data:
             if tarea['ID'] == id:
                 tarea['Estado'] = 'Completado'
+                print(f"Tarea '{tarea['Descripcion']}' completada con exito")
                 break
         return data
     
@@ -30,7 +32,7 @@ class GestorTareas:
         
         print("ID\tPRIORIDAD\tESTADO\tTAREA")
         for tarea in data:
-            if filtro is None or tarea[filtro[0]] == filtro[1]:
+            if filtro[0] is None or tarea[filtro[0]] == filtro[1]:
                 print(
                 f"{tarea['ID']}\t"
                 f"{tarea['Prioridad']}\t"
