@@ -3,7 +3,7 @@ from models import Tarea
 class GestorTareas:
     def agregar(self, id, descripcion: str, prioridad: str, estado: str):
         tarea_nueva = Tarea(id, descripcion, prioridad, estado)
-        print(f"Nueva tarea (id: {tarea_nueva.id})")
+        print(f"Tarea agregada con el id: {tarea_nueva.id}")
         return tarea_nueva.crear()
     
     def completar(self, id: int, data: list):
