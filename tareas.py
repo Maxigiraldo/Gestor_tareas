@@ -27,6 +27,9 @@ if args.gestor_action == 'completar':
 if args.gestor_action == 'eliminar':
     gestor.eliminar(args.id, data)
 
+if args.gestor_action == 'editar':
+    gestor.editar(args.id, args.descripcion, args.prioridad, data)
+
 if args.gestor_action == 'listar':
     gestor.listar(data, [args.filtro, args.atributo])
 

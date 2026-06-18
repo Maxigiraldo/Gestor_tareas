@@ -17,7 +17,15 @@ class GestorTareas:
         for tarea in data:
             if tarea['ID'] == id:
                 data.remove(tarea)
-        
+    
+    def editar(self, id: int, descripcion, prioridad, data: list):
+        for tarea in data:
+            if tarea['ID'] == id:
+                tarea['Descripcion'] = descripcion
+                if  tarea['Prioridad'] != prioridad:
+                    tarea['Prioridad'] = prioridad
+                print(f"Tarea '{tarea['Descripcion']}' editada con exito")
+                break
     
     def listar(self, data: list, filtro):
         if data == []:
