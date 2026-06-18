@@ -4,3 +4,12 @@ class Tarea:
         self.descripcion = descripcion
         self.prioridad = prioridad
         self.estado = estado
+    
+    def crear(self):
+        tarea = {
+            'ID': self.id,
+            'Descripcion': self.descripcion,
+            'Prioridad': self.prioridad,
+            'Estado': self.estado
+        }
+        return tarea

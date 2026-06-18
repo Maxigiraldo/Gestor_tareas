@@ -3,14 +3,8 @@ from models import Tarea
 class GestorTareas:
     def agregar(self, id, descripcion: str, prioridad: str, estado: str):
         tarea_nueva = Tarea(id, descripcion, prioridad, estado)
-        tarea = {
-            'ID': tarea_nueva.id,
-            'Descripcion': tarea_nueva.descripcion,
-            'Prioridad': tarea_nueva.prioridad,
-            'Estado': tarea_nueva.estado
-        }
         print(f"Tarea agregada con exito (id: {tarea_nueva.id})")
-        return tarea
+        return tarea_nueva.crear()
     
     def completar(self, id: int, data: list):
         for tarea in data:
@@ -18,12 +12,12 @@ class GestorTareas:
                 tarea['Estado'] = 'Completado'
                 print(f"Tarea '{tarea['Descripcion']}' completada con exito")
                 break
-        return data
     
     def eliminar(self, id: int, data: list):
         for tarea in data:
             if tarea['ID'] == id:
                 data.remove(tarea)
+        
     
     def listar(self, data: list, filtro):
         if data == []:

@@ -17,10 +17,8 @@ storage = Storage()
 data = storage.leer()
 
 if args.gestor_action == 'agregar':
-    if data == []:
-        id = 1
-    else:
-        id = len(data) + 1
+    tarea_final = max(data, key=lambda lista: lista['ID'], default=1)
+    id = tarea_final['ID'] + 1
     data.append(gestor.agregar(id, args.descripcion, args.prioridad, "Pendiente"))
 
 if args.gestor_action == 'completar':
